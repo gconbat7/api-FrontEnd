@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 'use client';
 import { Button } from 'primereact/button';
 import { Column } from 'primereact/column';
@@ -65,7 +64,7 @@ const Usuario = () => {
     const hideDeleteUsuariosDialog = () => {
         setDeleteUsuariosDialog(false);
     };
-        //SALVAR USUÁRIO
+        
     const saveUsuario = () => {
         setSubmitted(true);
 
@@ -110,19 +109,18 @@ const Usuario = () => {
         }
 
     };
-        //EDITAR O USUÁRIO
+        
     const editUsuario = (usuario: Projeto.Usuario) => {
         setUsuario({ ...usuario });
         setUsuarioDialog(true);
     };
-        //COMFIRMAR O USUÁRIO DELETADO
+        
     const confirmDeleteUsuario = (usuario: Projeto.Usuario) => {
         setUsuario(usuario);
         setDeleteUsuarioDialog(true);
     };
 
 
-        //DELETAR USUÁRIO
     const deleteUsuario = () => {
         if(usuario.id){
             usuarioService.excluir(usuario.id)
